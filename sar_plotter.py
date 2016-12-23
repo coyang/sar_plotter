@@ -21,6 +21,9 @@ def plot_all_the_things(l,n,e):
         y = np.array([item[1+i] for item in l])
         x = np.array([datetime.fromtimestamp(item[0]) for item in l])
 
+        if '%' in e[i]:
+            plt.ylim([0,100])
+
         plt.plot(x,y)
         plt.xlabel('time')
         plt.xticks(rotation=90)
